@@ -8,6 +8,9 @@ describe 'Stack' do
     it "空だったらtrueを返す" do
       expect( subject ).to be_empty
     end
+    it "サイズを聞かれたらゼロを返す" do
+      expect( subject.size ).to eq 0
+    end
   end
 
   context 'スタックが空以外の場合' do
@@ -18,6 +21,9 @@ describe 'Stack' do
     }
     it "空でなかったらfalseを返す" do
       expect( subject ).not_to be_empty
+    end
+    it "サイズを返す_1" do
+      expect( subject.size ).to eq 1
     end
   end
 end
