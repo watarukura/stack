@@ -10,4 +10,8 @@ class Stack
   def empty?
     @nodes.empty?
   end
+
+  def size
+    @nodes.size
+  end
 end
