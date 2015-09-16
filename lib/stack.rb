@@ -14,4 +14,8 @@ class Stack
   def size
     @nodes.size
   end
+
+  def top
+    @nodes[@nodes.size - 1]
+  end
 end

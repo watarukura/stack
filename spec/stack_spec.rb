@@ -13,7 +13,7 @@ describe 'Stack' do
     end
   end
 
-  context 'スタックが空以外の場合' do
+  context 'スタックに一つ積んだ場合' do
     subject {
       stack = Stack.new
       stack.push(10)
@@ -25,5 +25,22 @@ describe 'Stack' do
     it "サイズを返す_1" do
       expect( subject.size ).to eq 1
     end
+    it "スタックの一番上を取得する" do
+      expect( subject.top ).to eq 10
+    end
   end
+
+  context 'スタックが複数積んだ場合' do
+    subject {
+      stack = Stack.new
+      stack.push(10)
+      stack.push(11)
+      stack.push(12)
+      stack
+    }
+    it "スタックの一番上を取得する" do
+      expect( subject.top ).to eq 12
+    end
+  end
+
 end
