@@ -7,6 +7,10 @@ class Stack
     @nodes << node
   end
 
+  def pop
+    @nodes.delete_at(-1)
+  end
+
   def empty?
     @nodes.empty?
   end

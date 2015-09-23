@@ -30,7 +30,7 @@ describe 'Stack' do
     end
   end
 
-  context 'スタックが複数積んだ場合' do
+  context 'スタックを複数積んだ場合' do
     subject {
       stack = Stack.new
       stack.push(10)
@@ -40,6 +40,21 @@ describe 'Stack' do
     }
     it "スタックの一番上を取得する" do
       expect( subject.top ).to eq 12
+    end
+    it "スタックにプッシュするとサイズが増える" do
+      expect{ subject.push(13) }.to change{ subject.size}.from(3).to(4)
+    end
+  end
+  context 'スタックを複数積んだ場合' do
+    subject {
+      stack = Stack.new
+      stack.push(10)
+      stack.push(11)
+      stack.push(12)
+      stack
+    }
+    it "スタックからポップするとサイズが減る" do
+      expect{ subject.pop() }.to change{ subject.size}.from(3).to(2)
     end
   end
 
